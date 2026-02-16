@@ -12,11 +12,11 @@ const Navbar = ({ open, setOpen }) => {
 
                     {/* left */}
                     <div className="flex items-center gap-4">
-                        <button
+                        {/* <button
                             onClick={() => setOpen(!open)}
                             className="text-2xl opacity-80 hover:opacity-100">
                             <i className="ri-menu-line"></i>
-                        </button>
+                        </button> */}
                         <div className="flex items-center gap-2 font-semibold text-lg">
                             Social-Post
                         </div>
@@ -24,7 +24,7 @@ const Navbar = ({ open, setOpen }) => {
 
                     {/* Search Section */}
                     <div className="w-[400px] max-w-[40vw]">
-                        <div className="flex items-center gap-3 bg-white/2 border border-white/10 rounded-xl px-4 py-2 backdrop-blur-md">
+                        <div className="flex items-center gap-3 bg-white/2 border border-white rounded-xl px-4 py-2 backdrop-blur-md">
                             <i className="ri-search-line opacity-60"></i>
                             <input className="bg-transparent outline-none w-full text-sm placeholder:text-white/50"
                                 placeholder="Search... " />
