@@ -5,7 +5,7 @@ import "remixicon/fonts/remixicon.css";
 const Navbar = ({ open, setOpen }) => {
     return (
         <>
-            <div className="h-screen bg-black text-white overflow-hidden">
+            <div className=" bg-black text-white overflow-hidden">
 
                 {/* Navbar */}
                 <div className="fixed top-0 left-0 right-0 h-16 flex items-center justify-between px-6 backdrop-blur-xl bg-black border-2 border-white z-50">

@@ -1,13 +1,14 @@
 import React from 'react'
-import Navbar from './Components/Navbar'
+import { BrowserRouter as Router } from 'react-router-dom';
 import Main from './Components/Main'
 
 const App = () => {
   return (
-    <div className="h-[200vh] bg-black">
-      <Main/>
-      {/* <Navbar/> */}
-    </div>
+    <Router>
+      <div className="h-auto bg-black">
+        <Main />
+      </div>
+    </Router>
   )
 }
 
