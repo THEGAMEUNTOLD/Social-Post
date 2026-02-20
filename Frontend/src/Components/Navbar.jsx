@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "remixicon/fonts/remixicon.css";
+import profile from "../assets/profile.jpg";
 
 
 const Navbar = ({ open, setOpen }) => {
@@ -39,7 +40,7 @@ const Navbar = ({ open, setOpen }) => {
                         <div className={`w-full flex items-center ${open ? "gap-4 px-4 py-3" : "justify-center py-3"} rounded-2xl hover:bg-white/5 transition`}>
                             {/* Avatar */}
                             <img
-                                src="https://i.pravatar.cc/100"   // replace with real user image
+                                src={profile}  // replace with real user image
                                 alt="profile"
                                 className="w-10 h-10 rounded-full object-cover"
                             />
