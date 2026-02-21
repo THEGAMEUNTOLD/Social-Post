@@ -15,11 +15,16 @@ import Setting from "./Setting";
 import Profile from "./Profile";
 import Messages from "./Messages";
 
-// React → UI library
-// useState → Manages sidebar open/close state
-// Routes & Route → Handles page navigation
-// UI Components → Layout structure
-// Page Components → Individual screens
+/*
+========================================
+Imports Explanation
+React → Core UI library
+useState → Controls sidebar open/close state
+Routes / Route → Client-side navigation
+Navbar / Sidebar → Layout components
+Page Components → Application screens
+========================================
+*/
 
 
 // ==============================
@@ -29,51 +34,72 @@ import Messages from "./Messages";
 function Main() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // isSidebarOpen → Controls sidebar visibility
-  // setIsSidebarOpen → Function to toggle sidebar state
+  /*
+  ========================================
+  Sidebar State Management
+  isSidebarOpen → Boolean UI state
+  setIsSidebarOpen → Updates sidebar visibility
+  Centralized state shared by Navbar + Sidebar
+  ========================================
+  */
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-black text-white">
 
       {/* ==============================
-          NAVIGATION COMPONENTS
+          NAVIGATION AREA
       ============================== */}
 
       <Navbar
         isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
+        onToggleSidebar={() => setIsSidebarOpen(prev => !prev)}
       />
 
       <Sidebar
         isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
+        onCloseSidebar={() => setIsSidebarOpen(false)}
       />
 
-      {/* Navbar → Top navigation bar
-         Sidebar → Side navigation panel
-         Both receive state to control UI behavior */}
+      {/*
+      Navbar → Top navigation bar
+      Sidebar → Expandable side navigation
+      Both controlled by shared state
+      Callbacks used instead of exposing setter directly
+      */}
 
 
       {/* ==============================
           MAIN CONTENT AREA
       ============================== */}
 
-      <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "ml-72" : "ml-20"} pt-16`}>
+      <main
+        className={`
+          flex-1
+          transition-all duration-300
+          ${isSidebarOpen ? "ml-72" : "ml-20"}
+          pt-16
+        `}
+      >
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/library" element={<Library />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/messages" element={<Messages />} />
+
         </Routes>
       </main>
 
-      {/* main → Primary content container
-         ml-72 / ml-20 → Adjusts layout when sidebar expands/collapses
-         pt-16 → Prevents overlap with navbar
-         transition-all → Smooth animation for layout shift
-         Routes → Defines application pages */}
+      {/*
+      main → Primary page container
+      flex-1 → Takes remaining layout space
+      ml-72 / ml-20 → Responsive layout shift with sidebar
+      pt-16 → Prevents navbar overlap
+      transition-all → Smooth UI animation
+      Routes → Defines application pages
+      */}
 
     </div>
   );
@@ -86,4 +112,10 @@ function Main() {
 
 export default Main;
 
-// Makes component usable in App.jsx
+/*
+========================================
+Export Explanation
+Allows Main layout to be used in App.jsx
+Acts as root UI container for authenticated pages
+========================================
+*/
