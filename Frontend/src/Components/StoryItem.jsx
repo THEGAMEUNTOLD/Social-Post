@@ -16,7 +16,7 @@ const StoryItem = ({ story }) => {
   return (
     <button
       type="button"
-      className="flex flex-col items-center shrink-0 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded-lg"
+      className="flex flex-col items-center shrink-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-500 rounded-lg"
       aria-label={`View story of ${story.username}`} // Accessibility for screen readers
     >
       {/* Story avatar with gradient border */}

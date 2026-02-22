@@ -3,6 +3,7 @@
 // ==============================
 
 import React, { useMemo } from "react";
+import "remixicon/fonts/remixicon.css";
 
 // React → UI library
 // useMemo → Prevents re-generating posts on every render
@@ -40,21 +41,12 @@ function Explore() {
           POSTS GRID
       ============================== */}
 
-      <div className="
-        grid grid-cols-3
-        auto-rows-[180px] md:auto-rows-[220px]
-        gap-2
-      ">
+      <div className="grid grid-cols-3 auto-rows-[180px] md:auto-rows-[220px] gap-0.5">
         {posts.map((post) => (
           <article
             key={post.id}
             tabIndex={0}
-            className={`
-              relative group overflow-hidden rounded-2xl cursor-pointer
-              focus:outline-none focus:ring-2 focus:ring-white/70
-              ${post.featured ? "md:col-span-2 md:row-span-2" : ""}
-            `}
-          >
+            className={`relative group overflow-hidden  cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/70 ${post.featured ? "md:col-span-2 md:row-span-2" : ""}`}>
 
             {/* ==============================
                 IMAGE
@@ -64,11 +56,7 @@ function Explore() {
               src={post.image}
               alt={`Post ${post.id}`}
               loading="lazy"
-              className="
-                w-full h-full object-cover
-                transition duration-500 ease-out
-                group-hover:scale-110
-              "
+              className="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-105"
             />
 
             {/* Displays post image
@@ -80,12 +68,7 @@ function Explore() {
                 HOVER OVERLAY
             ============================== */}
 
-            <div className="
-              absolute inset-0
-              bg-gradient-to-t from-black/70 via-black/30 to-transparent
-              opacity-0 group-hover:opacity-100
-              transition duration-300
-            " />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-85 transition duration-300" />
 
             {/* Dark gradient overlay on hover */}
 
@@ -94,19 +77,13 @@ function Explore() {
                 POST STATS
             ============================== */}
 
-            <div className="
-              absolute inset-0 z-10
-              flex items-center justify-center gap-6
-              text-white font-semibold text-lg
-              opacity-0 group-hover:opacity-100
-              transition duration-300
-            ">
+            <div className="absolute inset-0 z-10 flex items-center justify-center gap-6 text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition duration-300">
               <span className="flex items-center gap-1">
-                ❤️ {post.likes}
+                <i class="ri-heart-fill"></i> {post.likes}
               </span>
 
               <span className="flex items-center gap-1">
-                💬 {post.comments}
+                <i class="ri-chat-1-fill"></i> {post.comments}
               </span>
             </div>
 
@@ -117,11 +94,7 @@ function Explore() {
                 BORDER EFFECT
             ============================== */}
 
-            <div className="
-              absolute inset-0 rounded-2xl
-              ring-1 ring-white/10
-              pointer-events-none
-            " />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 pointer-events-none" />
 
             {/* Soft glass-style border */}
 

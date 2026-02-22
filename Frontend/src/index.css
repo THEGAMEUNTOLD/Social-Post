@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
-/* styles.css or global.css */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
+/* Hide scrollbar but allow scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE + Edge */
   scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+@keyframes likePop {
+  0% { transform: scale(0.2); opacity: 0; }
+  40% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
 }

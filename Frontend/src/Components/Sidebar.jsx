@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import profileImage from "../assets/profile.jpg";
+
 
 const Sidebar = ({ open, setOpen }) => {
     const location = useLocation();
@@ -48,7 +50,7 @@ const Sidebar = ({ open, setOpen }) => {
                     className={`w-full flex items-center transition-all duration-300 ${open ? "gap-4 px-4 py-3" : "justify-center py-3"}`}
                 >
                     <img
-                        src="https://i.pravatar.cc/100"
+                        src={profileImage}
                         alt="profile"
                         className="w-10 h-10 rounded-full object-cover"
                     />

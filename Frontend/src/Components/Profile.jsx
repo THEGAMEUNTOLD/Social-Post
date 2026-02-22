@@ -11,7 +11,7 @@
 
 import React, { useState } from "react";
 import { FaTh, FaBookmark, FaUserTag, FaFilm, FaCheckCircle } from "react-icons/fa";
-import { user, postsData, savedData, reelsData, taggedData } from "../Database/data";
+import { user, posts as postsData, savedData, reelsData, taggedData } from "../Database/ProfileData";
 import profileImage from "../assets/profile.jpg"; // Your local profile image
 
 const Profile = () => {
@@ -158,9 +158,8 @@ const Profile = () => {
           ].map((tab) => (
             <button
               key={tab.key}
-              className={`flex items-center gap-2 pt-4 ${
-                activeTab === tab.key ? "text-white border-t border-white" : ""
-              }`}
+              className={`flex items-center gap-2 pt-4 ${activeTab === tab.key ? "text-white border-t border-white" : ""
+                }`}
               onClick={() => setActiveTab(tab.key)}
             >
               {tab.icon} {tab.label}

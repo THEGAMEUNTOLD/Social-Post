@@ -14,27 +14,22 @@ export const user = {
     {
       id: 1,
       title: "Travel",
-      image: "https://source.unsplash.com/100x100/?travel",
+      image: "https://i.pinimg.com/1200x/b9/82/41/b9824142d3db284b59756c5893cebf54.jpg",
     },
     {
       id: 2,
       title: "Food",
-      image: "https://source.unsplash.com/100x100/?food",
+      image: "https://i.pinimg.com/1200x/4e/f5/90/4ef59024c47711f5fb14cd5b012fe3c9.jpg",
     },
     {
       id: 3,
       title: "Work",
-      image: "https://source.unsplash.com/100x100/?office",
+      image: "https://i.pinimg.com/736x/c1/a9/43/c1a943dcd3571ab02d4c8dadf230c843.jpg",
     },
   ],
 };
 
-// Posts data
-export const postsData = [
-  { id: 1, image: "https://source.unsplash.com/300x300/?nature" },
-  { id: 2, image: "https://source.unsplash.com/300x300/?city" },
-  { id: 3, image: "https://source.unsplash.com/300x300/?tech" },
-];
+
 
 // Saved posts data
 export const savedData = [
